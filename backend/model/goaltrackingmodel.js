@@ -47,7 +47,7 @@ goalSchema.pre("save", function (next) {
   next();
 });
 
-/* ------------------ Weekly Weight Schema ------------------ */
+/* ------------------ Weekly Weight Schema ------------ */
 const weeklyWeightSchema = new mongoose.Schema({
   date: {
     type: Date,
