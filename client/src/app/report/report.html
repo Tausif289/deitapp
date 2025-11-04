@@ -1,0 +1,60 @@
+<div class="report-container">
+  <header class="report-header">
+    <h1>Health Report</h1>
+    <p>A comprehensive overview of your health data.</p>
+  </header>
+
+  <div class="report-grid">
+    <div class="report-card">
+      <div class="card-header">
+        <h2>Daily Calorie Analysis</h2>
+      </div>
+      <div class="chart-container">
+        <canvas baseChart
+          [data]="calorieChartData"
+          [options]="calorieChartOptions"
+          [type]="'bar'">
+        </canvas>
+      </div>
+    </div>
+
+    <div class="report-card">
+      <div class="card-header">
+        <h2>Weekly Weight Journey</h2>
+      </div>
+      <div class="chart-container">
+        <canvas baseChart
+          [data]="weightChartData"
+          [options]="weightChartOptions"
+          [type]="'line'">
+        </canvas>
+      </div>
+    </div>
+
+    <div class="report-card">
+      <div class="card-header">
+        <h2>Activity Breakdown</h2>
+      </div>
+      <div class="chart-container">
+        <canvas baseChart
+          [data]="activityChartData"
+          [options]="activityChartOptions"
+          [type]="'doughnut'">
+        </canvas>
+      </div>
+    </div>
+
+    <div class="report-card">
+      <div class="card-header">
+        <h2>Nutrition Summary</h2>
+      </div>
+      <div class="chart-container">
+        <canvas baseChart
+          [data]="nutritionChartData"
+          [options]="nutritionChartOptions"
+          [type]="'doughnut'">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

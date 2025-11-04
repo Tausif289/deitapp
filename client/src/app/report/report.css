@@ -1,0 +1,116 @@
+:host {
+  display: block;
+  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.report-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ------------------ HEALTH REPORT TITLE ------------------ */
+.report-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeIn 1s ease forwards;
+}
+
+.report-header h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #22c55e; /* emerald green */
+  background: linear-gradient(90deg, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: slideGradient 3s ease-in-out infinite;
+  margin: 0;
+}
+
+.report-header p {
+  font-size: 1.1rem;
+  color: #9da0a3; /* dark slate gray */
+  margin-top: 0.4rem;
+  font-weight: 600;
+  animation: fadeIn 1.5s 0.5s ease forwards;
+}
+
+/* ------------------ ANIMATIONS ------------------ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* always 2 cards per row on large screens */
+  gap: 2rem;
+}
+
+/* For smaller screens — make it responsive */
+@media (max-width: 992px) {
+  .report-grid {
+    grid-template-columns: 1fr; /* 1 card per row on tablets or mobile */
+  }
+}
+
+.report-card {
+  background-color: var(--card-background);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.30), 0 3px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  margin-bottom: 1.5rem;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.chart-placeholder {
+  height: 200px;
+  background-color: var(--border-color);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  font-style: italic;
+}
+
+.chart-placeholder::after {
+    content: "Chart will be here";
+}
+
+.card-summary p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-summary strong {
+  font-weight: 600;
+}

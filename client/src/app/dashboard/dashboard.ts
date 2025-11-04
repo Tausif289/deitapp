@@ -1,0 +1,77 @@
+import { ChangeDetectionStrategy, Component, computed, inject, signal, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
+import { HealthDataService } from '../health-data.service';
+
+@Component({
+  selector: 'app-dashboard',
+  imports: [CommonModule, RouterModule],
+  templateUrl: './dashboard.html',
+  styleUrls: ['./dashboard.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class DashboardComponent implements OnInit {
+  public healthDataService = inject(HealthDataService);
+  private router = inject(Router);
+
+  public calorieGoal = signal(2100);
+  public intakeCalories = this.healthDataService.intakeCalories;
+  public burnedCalories = this.healthDataService.burnedCalories;
+  public breakfastItems = this.healthDataService.breakfastItems;
+  public lunchItems = this.healthDataService.lunchItems;
+  public dinnerItems = this.healthDataService.dinnerItems;
+  public todaysActivities = this.healthDataService.activityItems;
+  public protein = this.healthDataService.protein;
+  public carbs = this.healthDataService.carbs;
+  public fat = this.healthDataService.fat;
+  public waterIntake = this.healthDataService.waterIntake;
+
+  public remainingCalories = computed(() => this.calorieGoal() - this.intakeCalories());
+  public withoutdecimalremainingCalories = computed(() => Math.floor(this.calorieGoal() - this.intakeCalories()));
+
+  public get progress(): number {
+    const progress = (this.intakeCalories() / this.calorieGoal()) * 100;
+    return Math.min(progress, 100);
+  }
+
+  // ✅ Check if token exists
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
+  // ✅ Redirect if not logged in
+  redirectIfNotLoggedIn(): boolean {
+    if (!this.isLoggedIn()) {
+      this.router.navigate(['/login']);
+      return false;
+    }
+    return true;
+  }
+
+  // ✅ Add Water - with login protection
+  addWater() {
+    if (this.redirectIfNotLoggedIn()) {
+      this.healthDataService.addWater(250);
+    }
+  }
+
+  // ✅ Add Food - with login protection
+  goToAddFood() {
+    if (this.redirectIfNotLoggedIn()) {
+      this.router.navigate(['/add-food']);
+    }
+  }
+
+  // ✅ Add Activity - with login protection
+  goToAddActivity() {
+    if (this.redirectIfNotLoggedIn()) {
+      this.router.navigate(['/add-activity']);
+    }
+  }
+
+  // ✅ When Dashboard loads, verify login first
+  async ngOnInit() {
+    if (!this.redirectIfNotLoggedIn()) return;
+    await this.healthDataService.fetchAllLogs();
+  }
+}

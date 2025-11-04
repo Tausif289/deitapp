@@ -60,7 +60,7 @@ const weeklyWeightSchema = new mongoose.Schema({
   },
 });
 
-/* ------------------ Main User Goal Tracking Schema ------------------ */
+/* -------------- Main User Goal Tracking Schema ------------------ */
 const goalTrackingSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
