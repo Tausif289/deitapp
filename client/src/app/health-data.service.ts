@@ -83,7 +83,7 @@ export class HealthDataService {
     console.warn('⚠️ No userId found in localStorage');
     return;
   }
-    const url = `http://localhost:4000/api/food/${this.userId}`;
+    const url = `https://deitapp-backend.onrender.com/api/food/${this.userId}`;
     const data: any = await lastValueFrom(this.http.get(url));
     const foodLog = data.userFood?.foodLog || [];
 
