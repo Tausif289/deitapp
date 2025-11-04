@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ReportService {
-  private apiUrl = 'http://localhost:4000/api/report'; // ✅ Your backend base URL
+  private apiUrl = 'https://deitapp-backend.onrender.com/api/report'; // ✅ Your backend base URL
 
   constructor(private http: HttpClient) {}
 
