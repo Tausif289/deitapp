@@ -24,7 +24,7 @@ export interface WeightEntry {
   providedIn: 'root'
 })
 export class GoalTrackingService {
-  private apiUrl = 'https://deitapp-backend.onrender.com/api/goals';
+  private apiUrl = 'http://localhost:4000/api/goals';
 
   constructor(private http: HttpClient) {}
 
