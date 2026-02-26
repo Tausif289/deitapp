@@ -49,8 +49,8 @@ export class LoginComponent {
     if (!form.valid) return;
 
     const endpoint = this.isLoginMode
-      ? 'http://localhost:4000/api/users/register'
-      : 'http://localhost:4000/api/users/login';
+      ? 'https://deitapp-backend.onrender.com/api/users/register'
+      : 'https://deitapp-backend.onrender.com/api/users/login';
 
     this.http.post(endpoint, form.value).subscribe({
       next: (res: any) => {

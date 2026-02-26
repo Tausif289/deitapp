@@ -99,7 +99,7 @@ export class ProfileComponent2 {
       formData.append('photo', fileInput.files[0]);
     }
 
-    fetch(`http://localhost:4000/api/users/update-profile/${this.user._id}`, {
+    fetch(`https://deitapp-backend.onrender.com/api/users/update-profile/${this.user._id}`, {
       method: 'PUT',
       body: formData,
     })
