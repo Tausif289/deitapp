@@ -129,7 +129,7 @@ export class HealthDataService {
     console.error('❌ Cannot add food: userId missing');
     return;
   }
-    const url = 'http://localhost:4000/api/food/addFood';
+    const url = 'https://deitapp-backend.onrender.com/api/food/addFood';
     await lastValueFrom(
       this.http.post(url, {
         userId: this.userId,
@@ -147,7 +147,7 @@ export class HealthDataService {
   // 🔹 Add Activity
   // -----------------------------
   public async addActivityItem(item: ActivityItem) {
-    const url = 'http://localhost:4000/api/food/addActivity';
+    const url = 'https://deitapp-backend.onrender.com/api/food/addActivity';
     await lastValueFrom(
       this.http.post(url, {
         userId: this.userId,
@@ -164,7 +164,7 @@ export class HealthDataService {
 
   // ✅ Add water intake
   public async addWater(amount: number) {
-    const url = 'http://localhost:4000/api/food/addWater';
+    const url = 'https://deitapp-backend.onrender.com/api/food/addWater';
     await lastValueFrom(this.http.post(url, {
       userId: this.userId,
       username: 'tausif',
