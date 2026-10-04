@@ -285,25 +285,6 @@ POST /api/user/login
 }
 ```
 
----
-
-## 📸 Screenshots
-
-| Dashboard | Food Search |
-|---|---|
-| ![Dashboard](docs/screenshots/dashboard.png) | ![Food Search](docs/screenshots/food-search.png) |
-
-| Goal Tracking | Reports |
-|---|---|
-| ![Goals](docs/screenshots/goals.png) | ![Reports](docs/screenshots/reports.png) |
-
-| Dark Mode | Mobile View |
-|---|---|
-| ![Dark](docs/screenshots/dark.png) | ![Mobile](docs/screenshots/mobile.png) |
-
-> 💡 Create a `docs/screenshots/` folder and drop in your images.
-
----
 
 ## 🧪 Testing
 
@@ -370,8 +351,8 @@ Contributions are welcome!
 **Your Name**
 B.Tech CSE · Dr. Ambedkar Institute of Technology for Divyangjan, Kanpur
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/<your-username>)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/<your-profile>)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Tausif289/deitapp)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/feed/update/urn:li:activity:7389855110211944449/)
 
 ---
 
