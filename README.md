@@ -348,7 +348,7 @@ Contributions are welcome!
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Tausif**
 B.Tech CSE · Dr. Ambedkar Institute of Technology for Divyangjan, Kanpur
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Tausif289/deitapp)
